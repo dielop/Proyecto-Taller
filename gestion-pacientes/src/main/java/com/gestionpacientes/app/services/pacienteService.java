@@ -1,9 +1,9 @@
-package com.gestionpacientes.services;
+package com.gestionpacientes.app.services;
 
 import javax.transaction.Transactional;
 
-import com.gestionpacientes.model.Paciente;
-import com.gestionpacientes.repositories.*;
+import com.gestionpacientes.app.model.Paciente;
+import com.gestionpacientes.app.repositories.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
