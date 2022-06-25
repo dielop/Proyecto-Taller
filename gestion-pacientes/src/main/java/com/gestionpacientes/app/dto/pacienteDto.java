@@ -1,18 +1,7 @@
-package com.gestionpacientes.model;
+package com.gestionpacientes.app.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-
-@Entity
-// No hace falta esto porque la tabla de la entidad se llama como mi clase @Table(name = "Paciente")
-public class Paciente {
+public class pacienteDto {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
 	private int DNI;
 	private String nombre;
 	private String apellido;
@@ -21,21 +10,22 @@ public class Paciente {
 	private int direccionNro;
 	private int telefono;
 	
-	public Paciente() {
+	
+	public pacienteDto() {
 		
 	}
 	
-	public Paciente(int DNI, String nombre, String apellido, String localidad, String direccion, Integer direccionNro, Integer telefono) {
+	public pacienteDto(int DNI, String nombre, String apellido, String localidad, String direccion, Integer direccionNro, Integer telefono ) {
 		this.DNI = DNI;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.localidad = apellido;
+		this.localidad = localidad;
 		this.direccion = direccion;
 		this.direccionNro = direccionNro;
 		this.telefono = telefono;
 	}
 	
-	// Getters and setters
+	// Getters and Setters
 	public int getDNI() {
 		return DNI;
 	}
@@ -43,25 +33,19 @@ public class Paciente {
 	public void setDNI(int DNI) {
 		this.DNI = DNI;
 	}
-	
-	public int getId() {
-		return id;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	public String getApellido() {
 		return apellido;
 	}
+
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
@@ -69,8 +53,9 @@ public class Paciente {
 	public String getLocalidad() {
 		return localidad;
 	}
+
 	public void setLocalidad(String localidad) {
-		 this.localidad = localidad;
+		this.localidad = localidad;
 	}
 
 	public String getDireccion() {
@@ -97,5 +82,4 @@ public class Paciente {
 		this.telefono = telefono;
 	}
 	
-
 }

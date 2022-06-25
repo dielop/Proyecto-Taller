@@ -1,4 +1,4 @@
-package com.gestionpacientes.controllers;
+package com.gestionpacientes.app.controller;
 
 
 
@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gestionpacientes.dto.pacienteMensaje;
-import com.gestionpacientes.model.Paciente;
-import com.gestionpacientes.services.pacienteService;
-import com.gestionpacientes.dto.pacienteDto;
+import com.gestionpacientes.app.dto.pacienteDto;
+import com.gestionpacientes.app.dto.pacienteMensaje;
+import com.gestionpacientes.app.model.Paciente;
+import com.gestionpacientes.app.services.pacienteService;
 
 @RestController
 @RequestMapping("/pacientes")

@@ -1,4 +1,4 @@
-package com.gestionpacientes.dto;
+package com.gestionpacientes.app.dto;
 
 public class pacienteMensaje {
 	
