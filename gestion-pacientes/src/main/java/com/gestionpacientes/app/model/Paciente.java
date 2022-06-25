@@ -25,11 +25,11 @@ public class Paciente {
 		
 	}
 	
-	public Paciente(int DNI, String nombre, String apellido, String localidad, String direccion, Integer direccionNro, Integer telefono) {
+	public Paciente(int DNI, String nombre, String apellido, String localidad, String direccion, int direccionNro, int telefono) {
 		this.DNI = DNI;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.localidad = apellido;
+		this.localidad = localidad;
 		this.direccion = direccion;
 		this.direccionNro = direccionNro;
 		this.telefono = telefono;

@@ -15,7 +15,7 @@ public class pacienteDto {
 		
 	}
 	
-	public pacienteDto(int DNI, String nombre, String apellido, String localidad, String direccion, Integer direccionNro, Integer telefono ) {
+	public pacienteDto(int DNI, String nombre, String apellido, String localidad, String direccion, int direccionNro, int telefono ) {
 		this.DNI = DNI;
 		this.nombre = nombre;
 		this.apellido = apellido;

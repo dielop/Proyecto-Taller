@@ -42,7 +42,7 @@ public class pacienteController {
 	public ResponseEntity<Paciente> getById(@PathVariable("id") int id){
 		//Verifico si existe el id, si no existe retorno el mensaje
 		if(!pacienteService.existsById(id)) {
-			return new ResponseEntity(new pacienteMensaje("No existe el paciente - Id inexistente"), HttpStatus.NOT_FOUND);
+			return new ResponseEntity(new pacienteMensaje("No existe el paciente con el ID solicitado"), HttpStatus.NOT_FOUND);
 		}else{
 		// Como es optional tengo que usar el get, variable paciente de tipo Paciente
 		Paciente paciente = pacienteService.getOne(id).get();
@@ -72,6 +72,11 @@ public class pacienteController {
 		}
 		if(StringUtils.isBlank(Integer.toString(pacienteDto.getDNI()))) {
 			return new ResponseEntity(new pacienteMensaje("Debe ingresar un DNI"), HttpStatus.BAD_REQUEST);
+		}
+		
+		// Verifico si existe paciente con el DNI ingresado, si no, lo creamos 
+		if(pacienteService.existsByDNI(pacienteDto.getDNI())){
+			return new ResponseEntity(new pacienteMensaje("Ya existe un paciente con el DNI ingresado"), HttpStatus.BAD_REQUEST);
 		}
 		
 		Paciente paciente = new Paciente(pacienteDto.getDNI(), pacienteDto.getNombre(), pacienteDto.getApellido(), pacienteDto.getLocalidad(), pacienteDto.getDireccion(), pacienteDto.getDireccionNro(), pacienteDto.getTelefono());
