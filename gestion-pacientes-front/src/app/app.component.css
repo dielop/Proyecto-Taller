@@ -1,0 +1,97 @@
+/* Estilos de navegacion toolbar */
+mat-toolbar {
+    background: #004a9f;
+    color: white;
+}
+
+/* Estilos de navegacion side nav */
+.sidenav {
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background: #002b5c;
+    color: white;
+    border-radius: 10px;
+}
+
+.content {
+    height: calc(100vh - 98px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: lightgray;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+mat-icon {
+    size:1rem;
+    margin-right:0.5rem;
+}
+
+/* Items de navbar */
+.item{
+    background-color: transparent;
+    color:#FFFFFF;
+    border: none;
+    align-items: center;
+}
+
+.subItem{
+    border: none;
+    background-color: transparent;
+    color:#FFFFFF;
+    display:flex;
+    align-items: center;
+}
+
+/* Items de configuracion (navbar bottom) */
+.config{
+    padding-top:55vh;
+}
+
+.itemsConfig {
+    padding-left:30%;
+    border: none;
+    background-color: transparent;
+    color:#FFFFFF;
+    display:flex;
+    align-items: center;
+}
+
+/* Comportamiento de items */
+.expansor {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+}
+.expansor.rotated {
+    transform: rotate(-90);
+}
+.submenu {
+    overflow-y: hidden;
+    transition: transform 300ms ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    padding-left: 15px;
+    font-size: 1rem;
+  }
+
+.submenu.expandir{
+    transform: scaleY(1);
+}
+
+.full-width {
+    width: 100%;
+}
