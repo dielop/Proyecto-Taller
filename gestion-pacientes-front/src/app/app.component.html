@@ -1,0 +1,44 @@
+<!-- Navegacion superior -->
+<mat-toolbar>
+  Gestion de Pacientes - Software
+</mat-toolbar>
+
+<!-- Navegacion izquierda responsiva -->
+<mat-sidenav-container>
+  <mat-sidenav #sidenav class="sidenav" mode="side" opened="true">
+    <mat-nav-list>        
+      <mat-list-item (click)="mostrarMenu = !mostrarMenu" class="item">
+        <mat-icon mat-list-icon>person</mat-icon>
+        <span class="full-width" *ngIf ="siExpandir || siMuestra"> Pacientes </span>
+        <mat-icon class="expansor" [ngClass]="{'rotated' : mostrarMenu}" *ngIf = "siExpandir || siMuestra">expand_more</mat-icon>
+      </mat-list-item>
+
+      <div class="submenu" [ngClass]="{'expandir' : mostrarMenu}" *ngIf = "siMuestra || siExpandir" >     
+        <mat-list-item class="subItem">
+          <mat-icon>add</mat-icon>
+          <span>Alta Paciente</span>
+        </mat-list-item>
+        <mat-list-item class="subItem">
+          <mat-icon>edit</mat-icon>
+          <span>Modificar Paciente</span>
+        </mat-list-item>
+      </div> 
+      
+    </mat-nav-list>
+
+      <div class="config">
+        <mat-divider></mat-divider>
+          <mat-list-item class="itemsConfig">
+              <mat-icon>help</mat-icon>
+              <span>Ayuda</span>
+          </mat-list-item> 
+      </div>
+  </mat-sidenav>
+
+  <!-- Contenedor de componentes -->
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+        Main content here!
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
