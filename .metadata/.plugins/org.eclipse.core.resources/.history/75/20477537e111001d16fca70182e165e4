@@ -2,40 +2,38 @@ package com.gestionpacientes.app.dto;
 
 public class pacienteDto {
 	
-	private int DNI;
+	private long DNI;
 	private String nombre;
 	private String apellido;
 	private String localidad;
 	private String direccion;
-	private int direccionNro;
-	private int telefono;
+	private long telefono;
 	
 	
 	public pacienteDto() {
 		
 	}
 	
-	public pacienteDto(int DNI, String nombre, String apellido, String localidad, String direccion, int direccionNro, int telefono ) {
+	public pacienteDto(long DNI, String nombre, String apellido, String localidad, String direccion, long telefono ) {
 		this.DNI = DNI;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.localidad = localidad;
 		this.direccion = direccion;
-		this.direccionNro = direccionNro;
 		this.telefono = telefono;
 	}
 	
 	// Getters and Setters
-	public int getDNI() {
-		return DNI;
+	public long getDNI() {
+		return this.DNI;
 	}
 	
-	public void setDNI(int DNI) {
+	public void setDNI(long DNI) {
 		this.DNI = DNI;
 	}
 
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 
 	public void setNombre(String nombre) {
@@ -43,7 +41,7 @@ public class pacienteDto {
 	}
 
 	public String getApellido() {
-		return apellido;
+		return this.apellido;
 	}
 
 	public void setApellido(String apellido) {
@@ -51,7 +49,7 @@ public class pacienteDto {
 	}
 	
 	public String getLocalidad() {
-		return localidad;
+		return this.localidad;
 	}
 
 	public void setLocalidad(String localidad) {
@@ -59,27 +57,22 @@ public class pacienteDto {
 	}
 
 	public String getDireccion() {
-		return direccion;
+		return this.direccion;
 	}
 
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
 
-	public int getDireccionNro() {
-		return direccionNro;
+	public long getTelefono() {
+		return this.telefono;
 	}
 
-	public void setDireccionNro(int direccionNro) {
-		this.direccionNro = direccionNro;
-	}
-
-	public int getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(int telefono) {
+	public void setTelefono(long telefono) {
 		this.telefono = telefono;
 	}
 	
+	public String toString() {
+		return "DNI " + this.DNI + "\nDireccion: " + this.direccion; 
+	}
 }

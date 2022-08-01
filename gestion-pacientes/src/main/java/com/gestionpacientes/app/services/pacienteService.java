@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service
 @Transactional
-public class pacienteService {
+public class pacienteService{
 	// Inyecto el repositorio, esto sirve para no iniciarlizarlo desde la clase si no de cuando sea necesario lo haga.
 	@Autowired
 	pacienteRepository pacienteRepository;
@@ -20,11 +20,6 @@ public class pacienteService {
 	// Busco todos los pacientes en la lista de pacientes
 	public List<Paciente> List(){
 		return pacienteRepository.findAll();
-	}
-	
-	// Busco un paciente por ID
-	public Optional<Paciente> getOne(int id){
-		return pacienteRepository.findById(id);		
 	}
 	
 	// Busco un paciente por nombre
@@ -36,23 +31,22 @@ public class pacienteService {
 		pacienteRepository.save(paciente);
 	}
 	
-	public void delete(int id) {
-		pacienteRepository.deleteById(id);
-	}
-	
-	public boolean existsById(int id) {
-		return pacienteRepository.existsById(id);
-	}
+	/*public void delete(String dni) {
+		pacienteRepository.deleteBydni(dni);
+	}*/
+
 	
 	public boolean existsByNombre(String nombre){
 		return pacienteRepository.existsByNombre(nombre);
 	}
 	
-	public boolean existsByDNI(int DNI){
-		return pacienteRepository.existsByDNI(DNI);
+	public boolean existsBydni(String dni){
+		System.out.println(pacienteRepository.existsBydni(dni));
+		System.out.println(dni);
+		return pacienteRepository.existsBydni(dni);
 	}
 	
-	public Optional<Paciente> getByDNI(int DNI){
-		return pacienteRepository.findByDNI(DNI);		
+	public Optional<Paciente> getBydni(String dni){
+		return pacienteRepository.findBydni(dni);		
 	}
 }
